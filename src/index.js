@@ -1,7 +1,7 @@
+// import your function
 import myContact from "./js/contact.js";
 import myMenu from "./js/menu.js";
-import myAbout from "./js/about.js";
-
+import makeAboutTab from "./js/about.js";
 
 function componentContact() {
   var element = document.createElement("div");
@@ -10,20 +10,16 @@ function componentContact() {
   return element;
 }
 
+
+
 function componentMenu() {
-  var element = document.createElement("div");
+    var element = document.createElement("div");
+  
+    element.innerHTML = makeAboutTab();
+    return element;
+  }
+  
 
-  element.innerHTML = myMenu();
-  return element;
-}
-
-function componentAbout() {
-  var element = document.createElement("div");
-
-  element.innerHTML = myAbout();
-  return element;
-}
 
 document.body.appendChild(componentContact());
-document.body.appendChild(componentMenu());
-document.body.appendChild(componentAbout());
+document.body.appendChild(makeAboutTab());
