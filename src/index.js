@@ -1,25 +1,43 @@
 // import your function
-import myContact from "./js/contact.js";
-import myMenu from "./js/menu.js";
-import makeAboutTab from "./js/about.js";
+import { makeContactTab, populateContact } from "./js/contact.js";
+import { makeAboutTab, populateAbout } from "./js/about.js";
+import { makeMenuTab, populateMenu } from "./js/menu.js";
+import { makeHomeTab, populateHome } from "./js/home";
 
-function componentContact() {
-  var element = document.createElement("div");
+const content = document.querySelector("#content");
+const container = document.createElement("div");
+content.appendChild(makeHomeTab());
+container.appendChild(populateHome());
 
-  element.innerHTML = myContact();
-  return element;
-}
+content.appendChild(makeMenuTab());
+content.appendChild(makeAboutTab());
+content.appendChild(makeContactTab());
+content.appendChild(container);
 
+const elements = document.querySelectorAll("input");
+elements.forEach(element => {
+  element.addEventListener("change", event => {
+    switch (event.target.id) {
+      case "about-tab":
+        container.innerHTML = "";
+        container.appendChild(populateAbout());
+        break;
 
+      case "menu-tab":
+        container.innerHTML = "";
+        container.appendChild(populateMenu());
 
-function componentMenu() {
-    var element = document.createElement("div");
-  
-    element.innerHTML = makeAboutTab();
-    return element;
-  }
-  
+        break;
 
+      case "contact-tab":
+        container.innerHTML = "";
+        container.appendChild(populateContact());
+        break;
 
-document.body.appendChild(componentContact());
-document.body.appendChild(makeAboutTab());
+      case "home-tab":
+        container.innerHTML = "";
+        container.appendChild(populateHome());
+        break;
+    }
+  });
+});
