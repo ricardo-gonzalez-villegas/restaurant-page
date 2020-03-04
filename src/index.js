@@ -6,13 +6,41 @@ import { makeHomeTab, populateHome } from "./js/home";
 
 const content = document.querySelector("#content");
 const container = document.createElement("div");
-content.appendChild(makeHomeTab());
-container.appendChild(populateHome());
+container.classList.add("container");
 
-content.appendChild(makeMenuTab());
-content.appendChild(makeAboutTab());
-content.appendChild(makeContactTab());
+const navbar = document.createElement("div");
+navbar.classList.add("navbar");
+const navbarLeft = document.createElement("div");
+navbarLeft.classList.add("navbar-mini");
+const navbarRight = document.createElement("div");
+navbarRight.classList.add("navbar-mini");
+navbarRight.classList.add("tabs");
+content.appendChild(navbar);
+navbar.appendChild(navbarLeft);
+navbar.appendChild(navbarRight);
+
+const logoContainer = document.createElement("div");
+logoContainer.classList.add("logo-container");
+navbarLeft.appendChild(logoContainer);
+const logo = document.createElement("h1");
+logo.innerHTML = "LOS PRIMOS";
+logo.classList.add("logo");
+logoContainer.appendChild(logo);
+
+navbarRight.appendChild(makeHomeTab());
+content.appendChild(populateHome());
+
+navbarRight.appendChild(makeMenuTab());
+navbarRight.appendChild(makeAboutTab());
+navbarRight.appendChild(makeContactTab());
+
 content.appendChild(container);
+
+const removeBackground = () => {
+  document.getElementById("content").style.backgroundImage = "none";
+  document.getElementById("content").style.filter = "none";
+  if (document.getElementById('homepage')) document.getElementById('homepage').remove();
+};
 
 const elements = document.querySelectorAll("input");
 elements.forEach(element => {
@@ -21,22 +49,29 @@ elements.forEach(element => {
       case "about-tab":
         container.innerHTML = "";
         container.appendChild(populateAbout());
+        document.getElementById('about').style.backgroundImage = `url("/src/img/restaurant.jpg")`;
+        removeBackground();
         break;
 
       case "menu-tab":
         container.innerHTML = "";
+        removeBackground();
         container.appendChild(populateMenu());
-
         break;
 
       case "contact-tab":
         container.innerHTML = "";
         container.appendChild(populateContact());
+        removeBackground();
         break;
 
       case "home-tab":
         container.innerHTML = "";
+        document.getElementById(
+          "content"
+        ).style.backgroundImage = `url("/src/img/tacos.jpg")`;
         container.appendChild(populateHome());
+        document.getElementById("content").style.filter = `grayscale(100%)`;
         break;
     }
   });
