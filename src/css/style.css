@@ -1,26 +1,73 @@
+html,
+body {
+    height: 100%;
+    font-family: 'Overpass', sans-serif;
+}
+
+#content {
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+    height: 100%;
+    background-image: url("/src/img/tacos.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: snow;
+    filter: grayscale(100%);
+}
+
+.container {
+    flex-grow: 1;
+    width: 100%;
+    height: 100%;
+}
+
+.navbar {
+    width: 100%;
+    height: 60px;
+    color: snow;
+    background-color: black;
+}
+
+.navbar-mini {
+    width: 50%;
+    float: left;
+}
+
+.logo-container {
+    position: relative;
+    width: 300px;
+}
+
+.logo {
+    text-align: center;
+    left: 20px;
+    line-height: 60px;
+    font-size: 40px;
+    color: snow;
+}
+
 .tabs {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
+    height: 60px;
 }
 
 .tabs label {
     order: 1;
     display: block;
-    padding: 1rem 2rem;
-    margin-right: 0.2rem;
     cursor: pointer;
-    background: #90CAF9;
-    font-weight: bold;
-    transition: background ease 0.2s;
+    text-align: center;
+    font-size: 20px;
+    transition: ease 0.4s;
 }
 
 .tabs .tab {
     order: 99;
     flex-grow: 1;
-    width: 100%;
-    display: none;
-    padding: 1rem;
-    background: #fff;
+    float: left;
 }
 
 .tabs input[type="radio"] {
@@ -28,34 +75,108 @@
 }
 
 .tabs input[type="radio"]:checked + label {
-    background: #fff;
+    text-decoration: underline;
 }
 
 .tabs input[type="radio"]:checked + label + .tab {
     display: block;
 }
 
-@media(max-width: 45em) {
-    .tabs .tab,
-    .tabs label {
-        order: initial;
-    }
-    .tabs label {
-        width: 100%;
-        margin-right: 0;
-        margin-top: 0.2rem;
-    }
+.homepage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: snow;
+    font-size: 90px;
+    letter-spacing: 5px;
+    text-decoration: underline;
 }
 
-body {
-    background: #eee;
-    min-height: 100vh;
-    box-sizing: border-box;
-    padding-top: 10vh;
-    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-    font-weight: 300;
-    line-height: 1.5;
-    max-width: 60rem;
+.about{
+    width: 100%;
+    height: 100%;
+    background-image: url("/src/img/restaurant.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.about-container {
+    position: absolute;
+    bottom: 0px;
+    left: 15%;
+    width: 370px;
+    height: 370px;
+    background-color: snow;
+}
+
+.about-title{
+    width: 100%;
+    height: 100px;
+    line-height: 100px;
+    font-size: 30px;
+    text-align: center;
+    text-decoration-line: underline;
+}
+
+.about-text{
+    height: 270px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+    word-spacing: 5px;
+}
+
+.contact {
+    width: 100%;
+    height: 100%;
+}
+
+.contact-top{
     margin: 0 auto;
-    font-size: 112%;
+    left: 20px;
+    width: 96%;
+    height: 70%;
+    background-image: url("/src/img/plate.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.contact-bottom{
+    position: relative;
+    width: 100%;
+    height: 30%;
+    float: left;
+}
+
+.contact-title{
+    top: 20px;
+    width: 100%;
+    height: 30%;
+    position: relative;
+    float: left;
+    text-align: center;
+    font-size: 25px;
+    text-decoration-line: underline;
+}
+
+.contact-text{
+    position: relative;
+    top: 40px;
+    width: 100%;
+    height: 70%;
+    font-size: 20px;
+    float: left;
+    line-height: 30px;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+.sides{
+    width: 50%;
+    float: left;
 }
