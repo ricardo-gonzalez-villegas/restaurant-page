@@ -29,7 +29,7 @@ const populateAbout = () => {
   aboutText.classList.add("about-text");
   aboutContainer.appendChild(aboutText);
   aboutText.innerHTML =
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at urna sed nulla suscipit commodo vel sed est. Vestibulum pharetra tortor a arcu blandit, eget fringilla arcu tempus. Aliquam porttitor luctus mi, vel rutrum ex semper at.";
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at urna sed nulla suscipit commodo vel sed est. Vestibulum pharetra tortor a arcu blandit, eget fringilla arcu tempus. Aliquam porttitor luctus mi, vel rutrum ex semper at. Consectetur adipiscing elit nunc at urna.";
   div.appendChild(aboutContainer);
   return div;
 };

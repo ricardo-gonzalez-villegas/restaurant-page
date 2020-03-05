@@ -19,8 +19,15 @@ const makeHomeTab = () => {
 const populateHome = () => {
   const homepage = document.createElement("div");
   homepage.id = "homepage";
-  homepage.innerHTML = "LOS PRIMOS"
   homepage.classList.add('homepage');
+  const overText = document.createElement('div');
+  overText.innerHTML = "LOS PRIMOS";
+  overText.classList.add('over-text');
+  homepage.appendChild(overText);
+  const underText = document.createElement('div');
+  underText.innerHTML = "Mexican Kitchen";
+  underText.classList.add('under-text');
+  homepage.appendChild(underText);
   return homepage;
 };
 

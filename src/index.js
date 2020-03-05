@@ -10,13 +10,13 @@ container.classList.add("container");
 
 const navbar = document.createElement("div");
 navbar.classList.add("navbar");
+content.appendChild(navbar);
 const navbarLeft = document.createElement("div");
 navbarLeft.classList.add("navbar-mini");
+navbar.appendChild(navbarLeft);
 const navbarRight = document.createElement("div");
 navbarRight.classList.add("navbar-mini");
 navbarRight.classList.add("tabs");
-content.appendChild(navbar);
-navbar.appendChild(navbarLeft);
 navbar.appendChild(navbarRight);
 
 const logoContainer = document.createElement("div");
@@ -28,18 +28,17 @@ logo.classList.add("logo");
 logoContainer.appendChild(logo);
 
 navbarRight.appendChild(makeHomeTab());
-content.appendChild(populateHome());
-
 navbarRight.appendChild(makeMenuTab());
 navbarRight.appendChild(makeAboutTab());
 navbarRight.appendChild(makeContactTab());
 
+content.appendChild(populateHome());
 content.appendChild(container);
 
 const removeBackground = () => {
   document.getElementById("content").style.backgroundImage = "none";
-  document.getElementById("content").style.filter = "none";
-  if (document.getElementById('homepage')) document.getElementById('homepage').remove();
+  if (document.getElementById("homepage"))
+    document.getElementById("homepage").remove();
 };
 
 const elements = document.querySelectorAll("input");
@@ -49,7 +48,9 @@ elements.forEach(element => {
       case "about-tab":
         container.innerHTML = "";
         container.appendChild(populateAbout());
-        document.getElementById('about').style.backgroundImage = `url("/src/img/restaurant.jpg")`;
+        document.getElementById(
+          "about"
+        ).style.backgroundImage = `url("/src/img/restaurant.jpg")`;
         removeBackground();
         break;
 
@@ -71,7 +72,6 @@ elements.forEach(element => {
           "content"
         ).style.backgroundImage = `url("/src/img/tacos.jpg")`;
         container.appendChild(populateHome());
-        document.getElementById("content").style.filter = `grayscale(100%)`;
         break;
     }
   });

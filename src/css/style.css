@@ -2,6 +2,7 @@ html,
 body {
     height: 100%;
     font-family: 'Overpass', sans-serif;
+    background-color: cornsilk;
 }
 
 #content {
@@ -13,8 +14,6 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    background-color: snow;
-    filter: grayscale(100%);
 }
 
 .container {
@@ -87,13 +86,25 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.over-text {
     color: snow;
     font-size: 90px;
     letter-spacing: 5px;
     text-decoration: underline;
 }
 
-.about{
+.under-text {
+    position: relative;
+    top: 5px;
+    color: white;
+    font-size: 65px;
+    letter-spacing: 5px;
+    text-align: center;
+}
+
+.about {
     width: 100%;
     height: 100%;
     background-image: url("/src/img/restaurant.jpg");
@@ -104,29 +115,29 @@ body {
 
 .about-container {
     position: absolute;
-    bottom: 0px;
+    bottom: 0;
     left: 15%;
     width: 370px;
     height: 370px;
-    background-color: snow;
+    background-color: cornsilk;
 }
 
-.about-title{
+.about-title {
     width: 100%;
     height: 100px;
     line-height: 100px;
     font-size: 30px;
     text-align: center;
     text-decoration-line: underline;
+    color: navy;
 }
 
-.about-text{
+.about-text {
     height: 270px;
-    padding-left: 10px;
-    padding-right: 10px;
-    font-size: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 17px;
     line-height: 30px;
-    text-align: center;
     word-spacing: 5px;
 }
 
@@ -135,7 +146,7 @@ body {
     height: 100%;
 }
 
-.contact-top{
+.contact-top {
     margin: 0 auto;
     left: 20px;
     width: 96%;
@@ -146,29 +157,28 @@ body {
     background-position: center;
 }
 
-.contact-bottom{
+.contact-bottom {
     position: relative;
     width: 100%;
     height: 30%;
     float: left;
 }
 
-.contact-title{
-    top: 20px;
+.contact-title {
     width: 100%;
-    height: 30%;
     position: relative;
+    top: 10px;
     float: left;
     text-align: center;
     font-size: 25px;
     text-decoration-line: underline;
+    color: black;
 }
 
-.contact-text{
+.contact-text {
     position: relative;
-    top: 40px;
+    top: 20px;
     width: 100%;
-    height: 70%;
     font-size: 20px;
     float: left;
     line-height: 30px;
@@ -176,7 +186,89 @@ body {
     text-align: center;
 }
 
-.sides{
+.sides {
+    display: flex;
+    align-items: center;
+    height: 100%;
     width: 50%;
     float: left;
+}
+
+.box-container {
+    height: 80%;
+    width: 60%;
+    box-sizing: border-box;
+    border: 3px solid black;
+    margin: 0 auto;
+}
+
+.section {
+    padding-top: 50px;
+    margin: 0 auto;
+    width: 80%;
+}
+
+.menu-title {
+    padding-top: 20px;
+    padding-bottom: 10px;
+    margin: 0 auto;
+    width: 100%;
+    font-size: 40px;
+    border-bottom: 3px solid black;
+    text-align: center;
+    color: navy;
+}
+
+.menu-text {
+    position: relative;
+    top: 10px;
+    margin: 0 auto;
+    width: 100%;
+    font-size: 20px;
+    text-align: left;
+    color: black;
+}
+
+.menu-items {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    top: 30px;
+
+}
+
+.menu-item {
+    padding-top: 50px;
+    margin-right: 20px;
+    width: 23%;
+    height: 200px;
+    border-bottom: 1px dotted black;
+    border-width: thick;
+    float: left;
+}
+
+.name {
+    color: navy;
+    font-size: 20px;
+    line-height: 60px;
+    font-weight: bold;
+}
+
+.description {
+    color: black;
+    font-size: 18px;
+    line-height: 60px;
+}
+
+.price {
+    color: navy;
+    font-size: 20px;
+    line-height: 60px;
+    font-weight: bold;
+}
+
+
+.drinks {
+    padding-bottom: 90px;
 }
