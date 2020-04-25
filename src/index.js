@@ -50,7 +50,7 @@ elements.forEach(element => {
         container.appendChild(populateAbout());
         document.getElementById(
           "about"
-        ).style.backgroundImage = `url("/dist/img/restaurant.jpg")`;
+        ).style.backgroundImage = `url("./restaurant.jpg")`;
         removeBackground();
         break;
 
@@ -70,7 +70,7 @@ elements.forEach(element => {
         container.innerHTML = "";
         document.getElementById(
           "content"
-        ).style.backgroundImage = `url("/dist/img/tacos.jpg")`;
+        ).style.backgroundImage = `url("./tacos.jpg")`;
         container.appendChild(populateHome());
         break;
     }
