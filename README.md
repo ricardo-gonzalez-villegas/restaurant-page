@@ -4,6 +4,9 @@ This is a concept Mexican restaurant website built utilizing ES6 modules and web
 
 <a href="https://ricardo-gonzalez-villegas.github.io/restaurant-page/">View it here.</a>
 
+<h2>Technologies Used<h2/>
+HTML, CSS, Javascript, Webpack
+  
 <h1>Home Page</h1>
 
 <img src="/dist/home_page.png" />
